@@ -20,6 +20,14 @@ application {
     mainClass = 'hexlet.code.App'
 }
 
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = false
+        html.required = true
+        html.stylesheet resources.text.fromFile('config/checkstyle/checkstyle.xml')
+    }
+}
+
 run {
     standardInput = System.in
 }
