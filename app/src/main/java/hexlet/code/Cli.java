@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Cli {
 
-    public static void greeting() {
+    public static void greetings() {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("May I have your name?");
