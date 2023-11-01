@@ -9,7 +9,7 @@ public class Calc implements Game {
     private static char getOperator() {
         Character[] operators = {'+', '-', '*' };
         int randNum = operators.length;
-        return operators[getRandomValue(0, randNum-1)];
+        return operators[getRandomValue(0, randNum - 1)];
 
     }
 
