@@ -4,14 +4,15 @@ import hexlet.code.Game;
 
 import static java.util.concurrent.ThreadLocalRandom.current;
 
-public class Even implements Game {
+public final class Even implements Game {
 
-
+public static final int MIN_RAND_NUM = 1;
+public static final int MAX_RAND_NUM = 101;
 
     @Override
     public String[] questionAndAnswers() {
         String[] gameData = new String[2];
-        int randomNumber = current().nextInt(1, 100 + 1);
+        int randomNumber = current().nextInt(MIN_RAND_NUM, MAX_RAND_NUM);
         gameData[0] = randomNumber % 2 == 0 ? "yes" : "no";
         gameData[1] = String.valueOf(randomNumber);
 

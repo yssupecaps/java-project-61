@@ -4,7 +4,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Engine.getRandomValue;
 
-public class Calc implements Game {
+public final class Calc implements Game {
 
     public static final int MIN_RAND_NUM = 0;
     public static final int MAX_RAND_NUM = 12;

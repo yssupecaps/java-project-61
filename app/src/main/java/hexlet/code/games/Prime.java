@@ -4,8 +4,10 @@ import hexlet.code.Game;
 
 import static hexlet.code.Engine.getRandomValue;
 
-public class Prime implements Game {
+public final class Prime implements Game {
 
+    public static final int MIN_RAND_NUM = 0;
+    public static final int MAX_RAND_NUM = 20;
 
     @Override
     public String gameRules() {
@@ -27,9 +29,8 @@ public class Prime implements Game {
     @Override
     public String[] questionAndAnswers() {
         String[] gameData = new String[2];
-        int randValue = getRandomValue(0, 20);
+        int randValue = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
         String correctAnswer = isPrime(randValue);
-        System.out.println(correctAnswer);
         gameData[0] = correctAnswer;
         gameData[1] = String.valueOf(randValue);
         return gameData;

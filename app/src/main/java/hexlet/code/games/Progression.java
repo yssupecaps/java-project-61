@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 
 import static hexlet.code.Engine.getRandomValue;
 
-public class Progression implements Game {
+public final class Progression implements Game {
 
     public static final int MIN_RAND_NUM = 0;
     public static final int MAX_RAND_NUM = 100;
@@ -18,7 +18,7 @@ public class Progression implements Game {
     public String[] questionAndAnswers() {
         String[] gameData = new String[2];
         StringJoiner progressQuest = new StringJoiner(" ");
-        int randEl = getRandomValue(MIN_RAND_NUM, PROGRESSION_LENGTH-1);
+        int randEl = getRandomValue(MIN_RAND_NUM, PROGRESSION_LENGTH - 1);
         int step = getRandomValue(MIN_RAND_NUM, MAX_RAND_STEP);
         int progressionEl = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
         int hidedEl = 0;
