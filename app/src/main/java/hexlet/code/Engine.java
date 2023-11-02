@@ -5,7 +5,7 @@ import java.util.Scanner;
 import static java.util.concurrent.ThreadLocalRandom.current;
 
 public class Engine {
-    public static final int COUNTS_OF_ROUND = 13;
+    public static final int COUNTS_OF_ROUND = 3;
     private static final Scanner SCAN = new Scanner(System.in);
 
     public static int getRandomValue(int min, int max) {
