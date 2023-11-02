@@ -6,10 +6,13 @@ import static hexlet.code.Engine.getRandomValue;
 
 public class Calc implements Game {
 
+    public static final int MIN_RAND_NUM = 0;
+    public static final int MAX_RAND_NUM = 12;
+
+
     private static char getOperator() {
         Character[] operators = {'+', '-', '*' };
-        int randNum = operators.length;
-        return operators[getRandomValue(0, randNum - 1)];
+        return operators[getRandomValue(MIN_RAND_NUM, operators.length - 1)];
 
     }
 
@@ -17,8 +20,8 @@ public class Calc implements Game {
     public String[] questionAndAnswers() {
         String[] gameData = new String[2];
 
-        int value1 = getRandomValue(0, 12);
-        int value2 = getRandomValue(0, 12);
+        int value1 = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
+        int value2 = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
 
         int result;
         char operator = getOperator();
@@ -36,7 +39,7 @@ public class Calc implements Game {
                 throw new RuntimeException("No such operator");
         }
         gameData[0] = String.valueOf(result);
-        gameData[1] = value1 + " " + operator + " " + value2;
+        gameData[1] = String.format("%s %s %s", value1, operator, value2);
 
         return gameData;
     }

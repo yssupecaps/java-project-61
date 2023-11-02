@@ -4,7 +4,10 @@ import hexlet.code.Game;
 
 import static hexlet.code.Engine.getRandomValue;
 
-public class Nod implements Game {
+public class GCD implements Game {
+
+    public static final int MIN_RAND_NUM = 1;
+    public static final int MAX_RAND_NUM = 100;
 
     private String getNodResult(int rand1, int rand2) {
         int a = rand1;
@@ -24,11 +27,11 @@ public class Nod implements Game {
     public String[] questionAndAnswers() {
         String[] gameData = new String[2];
 
-        int rand1 = getRandomValue(1, 100);
-        int rand2 = getRandomValue(1, 100);
+        int randNum1 = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
+        int randNum2 = getRandomValue(MIN_RAND_NUM, MAX_RAND_NUM);
 
-        gameData[0] = getNodResult(rand1, rand2);
-        gameData[1] = rand1 + " " + rand2;
+        gameData[0] = getNodResult(randNum1, randNum2);
+        gameData[1] = String.format("%s %s",randNum1, randNum2);
         return gameData;
     }
 
